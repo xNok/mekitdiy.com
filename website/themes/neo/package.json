@@ -1,0 +1,14 @@
+{
+  "name": "neo",
+  "version": "0.1.0",
+  "description": "A Neo-Brutalist theme for Hugo using Tailwind CSS",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css",
+    "watch": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
+}

@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="bg-neo-white border-4 border-neo-black p-6 md:p-10 shadow-neo-lg">
+  <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ .Title }}</h1>
+  <div class="prose prose-lg max-w-none">
+    {{ .Content }}
+    <p class="mt-6">Welcome to the Neo-Brutalist homepage! Start adding content in your `content` directory.</p>
+    <a href="#" class="inline-block bg-neo-yellow text-neo-black font-bold py-2 px-4 border-2 border-neo-black shadow-neo hover:bg-yellow-400 transition-colors mt-4">Example Button</a>
+  </div>
+</div>
+{{ end }}
