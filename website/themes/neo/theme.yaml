@@ -1,0 +1,24 @@
+name: "Neo Brutalist Theme"
+license: "MIT"
+licenselink: "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description: "A Neo-Brutalist theme for Hugo using Tailwind CSS"
+homepage: "http://example.com/"
+tags: ["blog", "minimal", "responsive", "tailwindcss", "neo-brutalism"]
+features: ["tailwindcss"]
+min_version: "0.90.0"
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: assets/notwatching/hugo_stats\.json
+    target: css
+  - source: (postcss|tailwind)\.config\.js
+    target: css
+module:
+  mounts:
+  - source: assets
+    target: assets
+  - disableWatch: true
+    source: hugo_stats.json
+    target: assets/notwatching/hugo_stats.json

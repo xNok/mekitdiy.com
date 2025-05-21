@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<head>
+	<meta charset="UTF-8">
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+    {{ partialCached "css.html" . }}
+	<link rel="canonical" href="{{ .Permalink }}">
+	{{ hugo.Generator }}
+
+	{{/* Any extra head elements can be added via this block */}}
+	{{ block "head_extra" . }}{{ end }}
+</head>
+<body class="bg-neo-white text-neo-black">
+	{{/* Header section */}}
+	{{ block "header" . }}
+		{{ partial "header.html" . }}
+	{{ end }}
+
+	{{/* Main content section */}}
+	<main id="content">
+		{{ block "main" . }}{{ end }}
+	</main>
+
+	{{/* Footer section */}}
+	{{ block "footer" . }}
+		{{ partial "footer.html" . }}
+	{{ end }}
+
+	{{/* Any extra scripts can be added via this block */}}
+	{{ block "scripts_end" . }}{{ end }}
+</body>
+</html>

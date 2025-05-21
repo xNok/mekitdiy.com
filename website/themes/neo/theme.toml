@@ -1,8 +1,0 @@
-name = "Neo Brutalist Theme"
-license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = "A Neo-Brutalist theme for Hugo using Tailwind CSS"
-homepage = "http://example.com/"
-tags = ["blog", "minimal", "responsive", "tailwindcss", "neo-brutalism"]
-features = ["tailwindcss"]
-min_version = "0.90.0"

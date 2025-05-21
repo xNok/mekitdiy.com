@@ -2,3 +2,5 @@
 
 website/public
 website/resources
+
+node_modules/
