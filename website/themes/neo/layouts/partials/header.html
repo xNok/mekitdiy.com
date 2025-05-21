@@ -1,7 +1,13 @@
-<header class="bg-neo-yellow border-b-4 border-neo-black p-4">
-  <div class="container mx-auto">
-    <a href="{{ site.BaseURL }}" class="text-neo-black text-2xl font-bold hover:underline">
-      {{ site.Title }}
+<header class="bg-neo-blue text-neo-white py-6 border-b-4 border-neo-black">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    <a href="{{ .Site.BaseURL | relURL }}" class="text-3xl font-bold hover:text-neo-pink transition-colors">
+      {{ .Site.Title }}
     </a>
+    <nav>
+      <a href="{{ "/projects/" | relURL }}" class="text-lg hover:text-neo-yellow px-2 py-2">Projects</a>
+      <a href="{{ "/blog/" | relURL }}" class="text-lg hover:text-neo-yellow px-2 py-2">Blog</a>
+      {{/* <a href="{{ "/about/" | relURL }}" class="text-lg hover:text-neo-yellow px-3 py-2">About</a> */}}
+      {{/* <a href="{{ "/contact/" | relURL }}" class="text-lg hover:text-neo-yellow px-3 py-2">Contact</a> */}}
+    </nav>
   </div>
 </header>

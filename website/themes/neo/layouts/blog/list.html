@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="py-12">
+  <div class="container mx-auto px-6">
+    <h1 class="text-4xl font-bold text-neo-black text-center mb-12">{{ .Title }}</h1>
+
+    <div class="space-y-8">
+      {{ range .Pages.ByDate.Reverse }}
+        <article class="bg-neo-white border-4 border-neo-black p-6 shadow-neo">
+          <h2 class="text-2xl font-bold text-neo-blue mb-1">
+            <a href="{{ .Permalink }}" class="hover:text-neo-pink">{{ .Title }}</a>
+          </h2>
+          <p class="text-sm text-neo-black mb-3">
+            Published on <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ with .Params.project }}
+              | Project: <a href="{{ printf "/projects/%s/" . | relURL }}" class="text-neo-blue hover:underline">{{ . }}</a>
+            {{ end }}
+          </p>
+          <div class="prose max-w-none text-neo-black mb-4">
+            {{ .Summary }}
+          </div>
+          <a href="{{ .Permalink }}" class="inline-block bg-neo-pink text-neo-white font-semibold py-2 px-4 border-2 border-neo-black hover:bg-neo-yellow hover:text-neo-black transition-colors">Read More &rarr;</a>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="py-12">
+  <div class="container mx-auto px-6">
+    <header class="mb-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-neo-black">{{ .Title }}</h1>
+      <p class="text-neo-black mt-2">
+        Published on <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ with .Params.project }}
+          | Related Project: <a href="{{ printf "/projects/%s/" . | relURL }}" class="text-neo-blue hover:underline">{{ . }}</a>
+        {{ end }}
+      </p>
+    </header>
+    <div class="prose lg:prose-xl max-w-none mx-auto text-neo-black border-4 border-neo-black p-6 md:p-10 bg-neo-white shadow-neo">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

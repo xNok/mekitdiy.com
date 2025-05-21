@@ -1,10 +1,28 @@
 {{ define "main" }}
-<div class="bg-neo-white border-4 border-neo-black p-6 md:p-10 shadow-neo-lg">
-  <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ .Title }}</h1>
-  <div class="prose prose-lg max-w-none">
-    {{ .Content }}
-    <p class="mt-6">Welcome to the Neo-Brutalist homepage! Start adding content in your `content` directory.</p>
-    <a href="#" class="inline-block bg-neo-yellow text-neo-black font-bold py-2 px-4 border-2 border-neo-black shadow-neo hover:bg-yellow-400 transition-colors mt-4">Example Button</a>
+<section class="py-12 bg-neo-white">
+  <div class="container mx-auto px-6">
+    <h1 class="text-4xl font-bold text-neo-black text-center mb-2">Welcome to MekitDiY!</h1>
+    <p class="text-xl text-neo-black text-center mb-12">Your source for awesome DIY projects.</p>
+
+    <h2 class="text-3xl font-semibold text-neo-black text-center my-8">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {{ range first 2 (where .Site.RegularPages "Type" "projects") }}
+        <div class="bg-neo-white border-4 border-neo-black p-6 shadow-neo">
+          <h3 class="text-2xl font-bold text-neo-blue mb-2">{{ .Title }}</h3>
+          <p class="text-neo-black mb-4">{{ .Summary | truncate 150 }}</p>
+          <a href="{{ .Permalink }}" class="inline-block bg-neo-pink text-neo-white font-semibold py-2 px-4 border-2 border-neo-black hover:bg-neo-yellow hover:text-neo-black transition-colors">
+            Learn More
+          </a>
+        </div>
+      {{ end }}
+    </div>
+    {{ if gt (len (where .Site.RegularPages "Type" "projects")) 2 }}
+      <div class="text-center mt-12">
+        <a href="{{ "/projects/" | relURL }}" class="bg-neo-blue text-neo-white font-semibold py-3 px-6 border-2 border-neo-black hover:bg-neo-pink hover:text-neo-black transition-colors">
+          View All Projects
+        </a>
+      </div>
+    {{ end }}
   </div>
-</div>
+</section>
 {{ end }}
