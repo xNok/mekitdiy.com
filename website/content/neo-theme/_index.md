@@ -1,6 +1,6 @@
 ---
 title: "Neo Theme Palette"
-date: {{ .Date }}
+date: 2024-07-16
 draft: false
 ---
 

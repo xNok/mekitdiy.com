@@ -25,6 +25,11 @@ This changeset introduces a new neo-brutalist color palette to the website, upda
     - All "pop" colors on card-like elements with appropriate text colors.
     - Example of an input field with placeholder styling.
 
+#### 2.1. Correction: Front Matter
+- **File:** `website/content/neo-theme/_index.md`
+- **Date:** 2025-05-26
+- **Action:** Corrected the `date` field in the front matter from `{{ .Date }}` to a static date (`2024-07-16`) to resolve a build error related to YAML parsing. This change was made post-initial commit due to a build pipeline failure.
+
 ### 3. Footer Link
 - **File:** `website/themes/neo/layouts/partials/footer.html`
 - **Action:** Added a link in the website footer pointing to the new "Neo Theme" page. The link is styled using `text-logo-accent-cyan`.
