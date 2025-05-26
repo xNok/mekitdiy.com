@@ -2,28 +2,28 @@
 <article class="py-12">
   <div class="container mx-auto px-6">
     <header class="mb-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-neo-black">{{ .Title }}</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-nb-light-text">{{ .Title }}</h1>
     </header>
     <div class="flex flex-col md:flex-row gap-8">
-      <div class="md:w-3/4 prose lg:prose-xl max-w-none text-neo-black border-4 border-neo-black p-6 md:p-10 bg-neo-white shadow-neo">
+      <div class="md:w-3/4 prose lg:prose-xl max-w-none text-nb-light-text border-4 border-nb-light-border p-6 md:p-10 bg-nb-light-bg shadow-neo">
         {{ .Content }}
       </div>
       <aside class="md:w-1/4 space-y-6">
         {{ $projectName := .File.BaseFileName }}
         {{ $relatedArticles := where (where .Site.RegularPages "Type" "blog") ".Params.project" $projectName }}
         {{ if $relatedArticles }}
-          <div class="bg-neo-white border-4 border-neo-black p-6 shadow-neo">
-            <h3 class="text-xl font-bold text-neo-blue mb-4">Related Articles</h3>
+          <div class="bg-nb-light-bg border-4 border-nb-light-border p-6 shadow-neo">
+            <h3 class="text-xl font-bold text-nb-pop-blue mb-4">Related Articles</h3>
             <ul class="space-y-3">
               {{ range first 3 $relatedArticles.ByDate.Reverse }}
                 <li>
-                  <a href="{{ .Permalink }}" class="text-neo-black hover:text-neo-pink hover:underline font-semibold">{{ .Title }}</a>
-                  <p class="text-xs text-neo-black opacity-75">{{ .Date.Format "Jan 2, 2006" }}</p>
+                  <a href="{{ .Permalink }}" class="text-nb-light-text hover:text-nb-pop-pink hover:underline font-semibold">{{ .Title }}</a>
+                  <p class="text-xs text-nb-light-text opacity-75">{{ .Date.Format "Jan 2, 2006" }}</p>
                 </li>
               {{ end }}
             </ul>
             {{ if gt (len $relatedArticles) 3 }}
-              <a href="{{ "/blog/" | relURL }}?project={{ $projectName | urlize }}" class="text-neo-blue hover:underline mt-4 inline-block text-sm font-semibold">
+              <a href="{{ "/blog/" | relURL }}?project={{ $projectName | urlize }}" class="text-nb-pop-blue hover:underline mt-4 inline-block text-sm font-semibold">
                 More on {{ $projectName }}...
               </a>
             {{ end }}
