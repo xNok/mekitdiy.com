@@ -13,6 +13,8 @@
 
 	<meta name="p:domain_verify" content="{{ .Site.Params.Pinterest_domain_verify }}"/>
 
+	{{ partial "google_analytics.html" . }}
+
 	{{/* Any extra head elements can be added via this block */}}
 	{{ block "head_extra" . }}{{ end }}
 </head>

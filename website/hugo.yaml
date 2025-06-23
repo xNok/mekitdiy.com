@@ -5,3 +5,7 @@ theme: 'neo'
 
 params:
   pinterest_domain_verify: "b2a76553d3605a9602f0f4409f059530"
+
+services:
+  googleAnalytics:
+    id: G-GKPBVEJ933
