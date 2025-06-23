@@ -1,0 +1,73 @@
+{{ define "main" }}
+<div class="container mx-auto px-6 space-y-12 py-12">
+
+  <div>
+    <h2 class="text-3xl font-bold mb-4 border-b-4 border-nb-light-border">{{ .Title }}</h2>
+    <div class="text-lg">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <!-- Primary Palette Section -->
+  <div>
+    <h3 class="text-2xl font-bold mb-6">Primary Palette</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {{ $light := .Site.Data.theme.base.light }}
+      <div class="p-6 {{ $light.bg }} border-2 {{ $light.border }} rounded space-y-4">
+        <h4 class="text-xl font-bold {{ $light.text }}">{{ $light.name }}</h4>
+        <p class="{{ $light.text }}">This is a standard component in light mode. It uses <code class="{{ $light.placeholder }} p-1 rounded text-sm">nb-light-bg</code> for the background and <code class="{{ $light.placeholder }} p-1 rounded text-sm">nb-light-text</code> for text.</p>
+        <p class="{{ $light.text }}">Interactive elements like this <a href="#" class="text-nb-pop-blue font-bold hover:underline">link</a> use accent colors for visibility.</p>
+        <button class="px-4 py-2 bg-nb-light-text text-nb-light-bg font-bold rounded border-2 border-nb-light-text hover:bg-nb-light-border">Primary Button</button>
+      </div>
+
+      {{ $dark := .Site.Data.theme.base.dark }}
+      <div class="p-6 {{ $dark.bg }} border-2 {{ $dark.border }} rounded space-y-4">
+        <h4 class="text-xl font-bold {{ $dark.text }}">{{ $dark.name }}</h4>
+        <p class="{{ $dark.text }}">This is the same component in dark mode. It uses <code class="bg-nb-dark-border p-1 rounded text-sm">nb-dark-bg</code> for the background and <code class="bg-nb-dark-border p-1 rounded text-sm">nb-dark-text</code> for text.</p>
+        <p class="{{ $dark.text }}">This <a href="#" class="text-logo-accent-cyan font-bold hover:underline">link</a> stands out against the dark background.</p>
+        <button class="px-4 py-2 bg-nb-dark-text text-nb-dark-bg font-bold rounded border-2 border-nb-dark-text hover:bg-nb-dark-border">Primary Button</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop Colors Section -->
+  <div>
+    <h3 class="text-2xl font-bold mb-6">Pop & Accent Colors</h3>
+    <p class="mb-6">These vibrant colors are used for call-to-action elements, cards, tags, and other sections that need to grab the user's attention. Each has a corresponding text color for optimal contrast.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {{ range .Site.Data.theme.pop }}
+      <div class="p-4 {{ .bg }} {{ .text }} border-2 border-nb-dark-border rounded">
+        <h5 class="font-bold">{{ .name }}</h5>
+        <span>Text: {{ .text }}</span>
+      </div>
+      {{ end }}
+      {{ range .Site.Data.theme.accents }}
+      <div class="p-4 {{ .bg }} {{ .text }} border-2 border-nb-dark-border rounded">
+        <h5 class="font-bold">{{ .name }}</h5>
+        <span>Text: {{ .text }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Form Elements Section -->
+  <div>
+    <h3 class="text-2xl font-bold mb-6">Form Elements</h3>
+    <div class="p-6 bg-nb-light-bg border-2 border-nb-light-border rounded max-w-md">
+      <form class="space-y-4">
+        <div>
+          <label for="name" class="block font-bold text-nb-light-text mb-1">Your Name</label>
+          <input type="text" id="name" placeholder="e.g., Ada Lovelace" class="w-full p-2 bg-white border-2 border-nb-light-border rounded text-nb-light-text placeholder:text-nb-light-border focus:border-nb-pop-blue focus:outline-none">
+        </div>
+        <div>
+          <label for="message" class="block font-bold text-nb-light-text mb-1">Message</label>
+          <textarea id="message" rows="4" placeholder="Your brilliant thoughts..." class="w-full p-2 bg-white border-2 border-nb-light-border rounded text-nb-light-text placeholder:text-nb-light-border focus:border-nb-pop-blue focus:outline-none"></textarea>
+        </div>
+        <button type="submit" class="w-full px-4 py-3 bg-nb-pop-yellow {{ .Site.Data.theme.form.text_on_pop.dark }} font-bold rounded border-2 border-nb-light-text hover:bg-nb-pop-orange">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+{{ end }}

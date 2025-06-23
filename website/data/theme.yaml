@@ -1,0 +1,51 @@
+base:
+  light:
+    name: "Light Mode"
+    bg: "bg-nb-light-bg"
+    text: "text-nb-light-text"
+    border: "border-nb-light-border"
+    placeholder: "bg-nb-light-placeholder"
+  dark:
+    name: "Dark Mode"
+    bg: "bg-nb-dark-bg"
+    text: "text-nb-dark-text"
+    border: "border-nb-dark-border"
+
+accents:
+  - name: "Accent Cyan"
+    bg: "bg-logo-accent-cyan"
+    text: "text-text-on-pop-dark"
+  - name: "Accent Teal"
+    bg: "bg-logo-accent-teal"
+    text: "text-text-on-pop-dark"
+
+pop:
+  - name: "Pop Red"
+    bg: "bg-nb-pop-red"
+    text: "text-text-on-pop-bright"
+  - name: "Pop Orange"
+    bg: "bg-nb-pop-orange"
+    text: "text-text-on-pop-dark"
+  - name: "Pop Yellow"
+    bg: "bg-nb-pop-yellow"
+    text: "text-text-on-pop-dark"
+  - name: "Pop Lime"
+    bg: "bg-nb-pop-lime"
+    text: "text-text-on-pop-dark"
+  - name: "Pop Mint"
+    bg: "bg-nb-pop-mint"
+    text: "text-text-on-pop-dark"
+  - name: "Pop Blue"
+    bg: "bg-nb-pop-blue"
+    text: "text-text-on-pop-bright"
+  - name: "Pop Purple"
+    bg: "bg-nb-pop-purple"
+    text: "text-text-on-pop-bright"
+  - name: "Pop Pink"
+    bg: "bg-nb-pop-pink"
+    text: "text-text-on-pop-bright"
+
+form:
+  text_on_pop:
+    bright: "text-text-on-pop-bright"
+    dark: "text-text-on-pop-dark"
