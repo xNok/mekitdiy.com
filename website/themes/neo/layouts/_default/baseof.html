@@ -6,14 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
-    {{ partialCached "css.html" . }}
-	<link rel="canonical" href="{{ .Permalink }}">
-	{{ hugo.Generator }}
+	
+	{{ with (templates.Defer (dict "key" "global")) }}
+		{{ partial "css.html" . }}
+	{{ end }}
 
 	{{/* Any extra head elements can be added via this block */}}
 	{{ block "head_extra" . }}{{ end }}
 </head>
-<body class="bg-neo-white text-neo-black">
+<body class="bg-nb-light-bg text-nb-light-text">
 	{{/* Header section */}}
 	{{ block "header" . }}
 		{{ partial "header.html" . }}

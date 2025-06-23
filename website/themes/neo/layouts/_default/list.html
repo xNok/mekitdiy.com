@@ -1,10 +1,10 @@
 {{ define "main" }}
-<div class="bg-neo-white border-4 border-neo-black p-6 shadow-neo-lg">
-  <h1 class="text-3xl font-bold mb-6 border-b-2 border-neo-black pb-2">{{ .Title }}</h1>
+<div class="bg-nb-light-bg border-4 border-nb-light-border p-6 shadow-neo-lg">
+  <h1 class="text-3xl font-bold mb-6 border-b-2 border-nb-light-border pb-2">{{ .Title }}</h1>
   <ul class="space-y-4">
     {{ range .Pages }}
-    <li class="border-2 border-neo-black p-4 shadow-neo hover:shadow-neo-lg transition-shadow">
-      <a href="{{ .RelPermalink }}" class="text-xl font-semibold text-neo-black hover:text-neo-yellow hover:underline">
+    <li class="border-2 border-nb-light-border p-4 shadow-neo hover:shadow-neo-lg transition-shadow">
+      <a href="{{ .RelPermalink }}" class="text-xl font-semibold text-nb-light-text hover:text-nb-pop-yellow hover:underline">
         {{ .Title }}
       </a>
       <p class="text-sm text-gray-700 mt-1">{{ .Date.Format "January 2, 2006" }}</p>

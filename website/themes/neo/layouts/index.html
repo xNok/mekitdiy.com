@@ -1,16 +1,16 @@
 {{ define "main" }}
-<section class="py-12 bg-neo-white">
+<section class="py-12 bg-nb-light-bg">
   <div class="container mx-auto px-6">
-    <h1 class="text-4xl font-bold text-neo-black text-center mb-2">Welcome to MekitDiY!</h1>
-    <p class="text-xl text-neo-black text-center mb-12">Your source for awesome DIY projects.</p>
+    <h1 class="text-4xl font-bold text-nb-light-text text-center mb-2 bg-avocado-300">Welcome to MekitDiY!</h1>
+    <p class="text-xl text-nb-light-text text-center mb-12">Your source for awesome DIY projects.</p>
 
-    <h2 class="text-3xl font-semibold text-neo-black text-center my-8">Featured Projects</h2>
+    <h2 class="text-3xl font-semibold text-nb-light-text text-center my-8">Featured Projects</h2>
     <div class="grid md:grid-cols-2 gap-8">
       {{ range first 2 (where .Site.RegularPages "Type" "projects") }}
-        <div class="bg-neo-white border-4 border-neo-black p-6 shadow-neo">
-          <h3 class="text-2xl font-bold text-neo-blue mb-2">{{ .Title }}</h3>
-          <p class="text-neo-black mb-4">{{ .Summary | truncate 150 }}</p>
-          <a href="{{ .Permalink }}" class="inline-block bg-neo-pink text-neo-white font-semibold py-2 px-4 border-2 border-neo-black hover:bg-neo-yellow hover:text-neo-black transition-colors">
+        <div class="bg-nb-light-bg border-4 border-nb-light-border p-6 shadow-neo">
+          <h3 class="text-2xl font-bold text-nb-pop-blue mb-2">{{ .Title }}</h3>
+          <p class="text-nb-light-text mb-4">{{ .Summary | truncate 150 }}</p>
+          <a href="{{ .Permalink }}" class="inline-block bg-nb-pop-pink text-text-on-pop-bright font-semibold py-2 px-4 border-2 border-nb-light-border hover:bg-nb-pop-yellow hover:text-text-on-pop-dark transition-colors">
             Learn More
           </a>
         </div>
@@ -18,7 +18,7 @@
     </div>
     {{ if gt (len (where .Site.RegularPages "Type" "projects")) 2 }}
       <div class="text-center mt-12">
-        <a href="{{ "/projects/" | relURL }}" class="bg-neo-blue text-neo-white font-semibold py-3 px-6 border-2 border-neo-black hover:bg-neo-pink hover:text-neo-black transition-colors">
+        <a href="{{ "/projects/" | relURL }}" class="bg-nb-pop-blue text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-pink hover:text-text-on-pop-bright transition-colors">
           View All Projects
         </a>
       </div>
