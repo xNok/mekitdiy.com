@@ -11,6 +11,8 @@
 		{{ partial "css.html" . }}
 	{{ end }}
 
+	<meta name="p:domain_verify" content="{{ .Site.Params.Pinterest_domain_verify }}"/>
+
 	{{/* Any extra head elements can be added via this block */}}
 	{{ block "head_extra" . }}{{ end }}
 </head>

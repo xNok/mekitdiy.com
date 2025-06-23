@@ -2,3 +2,6 @@ baseURL: 'https://example.org/'
 languageCode: 'en-us'
 title: 'MekitDIY'
 theme: 'neo'
+
+params:
+  pinterest_domain_verify: "b2a76553d3605a9602f0f4409f059530"
