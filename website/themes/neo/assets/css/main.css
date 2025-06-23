@@ -1,2 +1,29 @@
 @import "tailwindcss";
 @source "hugo_stats.json";
+
+@theme {
+  /* --- Neo-Brutalist Palette --- */
+  --color-nb-dark-bg: #1A1A1A;
+  --color-nb-dark-text: #F0F0F0;
+  --color-nb-dark-border: #4A4A4A;
+
+  --color-nb-light-bg: #FFFFFF;
+  --color-nb-light-text: #0A0A0A;
+  --color-nb-light-border: #7D7D7D;
+  --color-nb-light-placeholder: #E0E0E0;
+
+  --color-logo-accent-cyan: #50C8FF;
+  --color-logo-accent-teal: #30D5C8;
+
+  --color-nb-pop-red: #FF3B30;
+  --color-nb-pop-orange: #FF9500;
+  --color-nb-pop-yellow: #FFCC00;
+  --color-nb-pop-lime: #BFFF00;
+  --color-nb-pop-mint: #00E0C7;
+  --color-nb-pop-blue: #007AFF;
+  --color-nb-pop-purple: #BF5AF2;
+  --color-nb-pop-pink: #FF2D55;
+
+  --color-text-on-pop-bright: #FFFFFF;
+  --color-text-on-pop-dark: #0A0A0A;
+}
