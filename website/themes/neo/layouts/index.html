@@ -4,6 +4,12 @@
     <h1 class="text-4xl font-bold text-nb-light-text text-center mb-2 bg-avocado-300">Welcome to MekitDiY!</h1>
     <p class="text-xl text-nb-light-text text-center mb-12">Your source for awesome DIY projects.</p>
 
+    {{ if .Site.Params.banner.enable }}
+    <div class="bg-nb-pop-yellow text-center py-4 my-8 border-2 border-nb-light-border shadow-neo">
+      <p class="text-nb-light-text font-semibold">{{ .Site.Params.banner.message }}</p>
+    </div>
+    {{ end }}
+
     <h2 class="text-3xl font-semibold text-nb-light-text text-center my-8">Featured Projects</h2>
     <div class="grid md:grid-cols-2 gap-8">
       {{ range first 2 (where .Site.RegularPages "Type" "projects") }}
