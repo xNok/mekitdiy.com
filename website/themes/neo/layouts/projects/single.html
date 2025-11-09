@@ -17,7 +17,7 @@
             <ul class="space-y-3">
               {{ range first 3 $relatedArticles.ByDate.Reverse }}
                 <li>
-                  <a href="{{ .Permalink }}" class="text-nb-light-text hover:text-nb-pop-pink hover:underline font-semibold">{{ .Title }}</a>
+                  <a href="{{ .RelPermalink }}" class="text-nb-light-text hover:text-nb-pop-pink hover:underline font-semibold">{{ .Title }}</a>
                   <p class="text-xs text-nb-light-text opacity-75">{{ .Date.Format "Jan 2, 2006" }}</p>
                 </li>
               {{ end }}

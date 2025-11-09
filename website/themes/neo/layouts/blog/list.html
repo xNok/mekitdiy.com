@@ -7,7 +7,7 @@
       {{ range .Pages.ByDate.Reverse }}
         <article class="bg-nb-light-bg border-4 border-nb-light-border p-6 shadow-neo">
           <h2 class="text-2xl font-bold text-nb-pop-blue mb-1">
-            <a href="{{ .Permalink }}" class="hover:text-nb-pop-pink">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="hover:text-nb-pop-pink">{{ .Title }}</a>
           </h2>
           <p class="text-sm text-nb-light-text mb-3">
             Published on <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
@@ -18,7 +18,7 @@
           <div class="prose max-w-none text-nb-light-text mb-4">
             {{ .Summary }}
           </div>
-          <a href="{{ .Permalink }}" class="inline-block bg-nb-pop-pink text-text-on-pop-bright font-semibold py-2 px-4 border-2 border-nb-light-border hover:bg-nb-pop-yellow hover:text-text-on-pop-dark transition-colors">Read More &rarr;</a>
+          <a href="{{ .RelPermalink }}" class="inline-block bg-nb-pop-pink text-text-on-pop-bright font-semibold py-2 px-4 border-2 border-nb-light-border hover:bg-nb-pop-yellow hover:text-text-on-pop-dark transition-colors">Read More &rarr;</a>
         </article>
       {{ end }}
     </div>

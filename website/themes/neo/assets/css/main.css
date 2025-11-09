@@ -21,9 +21,21 @@
   --color-nb-pop-lime: #BFFF00;
   --color-nb-pop-mint: #00E0C7;
   --color-nb-pop-blue: #007AFF;
+  --color-nb-pop-cyan: #50C8FF;
   --color-nb-pop-purple: #BF5AF2;
   --color-nb-pop-pink: #FF2D55;
 
   --color-text-on-pop-bright: #FFFFFF;
   --color-text-on-pop-dark: #0A0A0A;
+}
+
+/* Custom Shadow Classes for Neo-Brutalist Style */
+@layer utilities {
+  .shadow-neo {
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
+  }
+  
+  .shadow-neo-hover {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.9);
+  }
 }
