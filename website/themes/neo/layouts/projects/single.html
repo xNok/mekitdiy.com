@@ -23,7 +23,7 @@
               {{ end }}
             </ul>
             {{ if gt (len $relatedArticles) 3 }}
-              <a href="{{ "/blog/" | relURL }}?project={{ $projectName | urlize }}" class="text-nb-pop-blue hover:underline mt-4 inline-block text-sm font-semibold">
+              <a href="{{ "blog/" | relURL }}?project={{ $projectName | urlize }}" class="text-nb-pop-blue hover:underline mt-4 inline-block text-sm font-semibold">
                 More on {{ $projectName }}...
               </a>
             {{ end }}

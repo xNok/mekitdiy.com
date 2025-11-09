@@ -25,7 +25,7 @@
     </div>
     {{ if gt (len (where .Site.RegularPages "Type" "projects")) 2 }}
       <div class="text-center mb-16">
-        <a href="{{ "/projects/" | relURL }}" class="bg-nb-pop-blue text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-pink hover:text-text-on-pop-bright transition-colors">
+        <a href="{{ "projects/" | relURL }}" class="bg-nb-pop-blue text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-pink hover:text-text-on-pop-bright transition-colors">
           View All Projects
         </a>
       </div>
@@ -50,7 +50,7 @@
       {{ end }}
     </div>
     <div class="text-center mb-16">
-      <a href="{{ "/blog/" | relURL }}" class="bg-nb-pop-blue text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-pink hover:text-text-on-pop-bright transition-colors">
+      <a href="{{ "blog/" | relURL }}" class="bg-nb-pop-blue text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-pink hover:text-text-on-pop-bright transition-colors">
         View All Articles
       </a>
     </div>
@@ -73,10 +73,10 @@
       {{ end }}
     </div>
     <div class="text-center">
-      <a href="{{ "/projects/" | relURL }}" class="bg-nb-pop-blue text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-pink hover:text-text-on-pop-bright transition-colors mr-4">
+      <a href="{{ "projects/" | relURL }}" class="bg-nb-pop-blue text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-pink hover:text-text-on-pop-bright transition-colors mr-4">
         More Projects
       </a>
-      <a href="{{ "/blog/" | relURL }}" class="bg-nb-pop-pink text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-yellow hover:text-text-on-pop-dark transition-colors">
+      <a href="{{ "blog/" | relURL }}" class="bg-nb-pop-pink text-text-on-pop-bright font-semibold py-3 px-6 border-2 border-nb-light-border hover:bg-nb-pop-yellow hover:text-text-on-pop-dark transition-colors">
         More Articles
       </a>
     </div>
