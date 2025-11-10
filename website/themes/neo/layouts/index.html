@@ -22,7 +22,7 @@
       <div class="grid md:grid-cols-2 gap-8 mb-12">
         {{ range first 2 (where .Site.RegularPages "Type" "projects") }}
           <div class="bg-nb-light-bg border-4 border-nb-light-border p-8 shadow-neo-lg hover:shadow-neo-xl transition-all hover:-translate-y-1">
-            <div class="bg-nb-pop-blue border-3 border-nb-light-border p-3 inline-block mb-4 shadow-neo">
+            <div class="bg-nb-pop-blue border-4 border-nb-light-border p-3 inline-block mb-4 shadow-neo">
               <h3 class="text-2xl font-bold text-text-on-pop-bright">{{ .Title }}</h3>
             </div>
             <p class="text-nb-light-text mb-6 text-lg">{{ .Summary | truncate 150 }}</p>
@@ -35,7 +35,7 @@
       
       {{ if gt (len (where .Site.RegularPages "Type" "projects")) 2 }}
         <div class="text-center">
-          <a href="{{ "projects/" | relURL }}" class="inline-block bg-nb-pop-blue text-text-on-pop-bright font-bold py-4 px-8 text-xl border-4 border-nb-light-border shadow-neo-lg hover:shadow-neo-xl hover:bg-nb-pop-cyan transition-all">
+          <a href="{{ "projects/" | relURL }}" class="inline-block bg-nb-pop-blue text-text-on-pop-bright font-bold py-4 px-8 text-xl border-4 border-nb-light-border shadow-neo-lg hover:shadow-neo-xl hover:bg-logo-accent-cyan transition-all">
             View All Projects →
           </a>
         </div>
@@ -53,9 +53,9 @@
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         {{ range first 3 ($blogPosts.ByDate.Reverse) }}
           <div class="bg-nb-light-bg border-4 border-nb-light-border p-6 shadow-neo hover:shadow-neo-lg transition-all hover:-translate-y-1">
-            <div class="bg-nb-pop-cyan border-2 border-nb-light-border p-2 inline-block mb-3">
+            <div class="bg-logo-accent-cyan border-2 border-nb-light-border p-2 inline-block mb-3">
               <h3 class="text-xl font-bold text-text-on-pop-bright">
-                <a href="{{ .RelPermalink }}" class="hover:text-nb-pop-yellow">{{ .Title }}</a>
+                <a href="{{ .RelPermalink }}" class="hover:text-nb-light-text">{{ .Title }}</a>
               </h3>
             </div>
             <div class="bg-nb-pop-pink text-text-on-pop-bright font-bold text-sm px-3 py-1 inline-block mb-3">
@@ -81,13 +81,14 @@
     {{ $allPages := union (where .Site.RegularPages "Type" "projects") (where .Site.RegularPages "Type" "blog") }}
     {{ if $allPages }}
     <div class="mb-12">
-      <div class="bg-nb-pop-cyan border-4 border-nb-light-border p-4 inline-block shadow-neo mb-6 rotate-neo-2">
+      <div class="bg-logo-accent-cyan border-4 border-nb-light-border p-4 inline-block shadow-neo mb-6 rotate-neo-2">
         <h2 class="text-4xl font-bold text-text-on-pop-bright">Project Gallery</h2>
       </div>
       
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        {{ $gradients := slice "from-nb-pop-pink to-nb-pop-yellow" "from-nb-pop-blue to-logo-accent-cyan" "from-nb-pop-yellow to-nb-pop-pink" "from-logo-accent-cyan to-nb-pop-blue" }}
         {{ range first 8 ($allPages.ByDate.Reverse) }}
-          <a href="{{ .RelPermalink }}" class="group relative overflow-hidden border-4 border-nb-light-border shadow-neo-lg hover:shadow-neo-xl transition-all hover:-translate-y-2 bg-gradient-to-br {{ if eq (mod (add 1 .Date.Unix) 4) 0 }}from-nb-pop-pink to-nb-pop-yellow{{ else if eq (mod (add 1 .Date.Unix) 4) 1 }}from-nb-pop-blue to-nb-pop-cyan{{ else if eq (mod (add 1 .Date.Unix) 4) 2 }}from-nb-pop-yellow to-nb-pop-pink{{ else }}from-nb-pop-cyan to-nb-pop-blue{{ end }} aspect-square {{ if eq (mod (add 1 .Date.Unix) 3) 0 }}md:col-span-2 md:row-span-2{{ end }}">
+          <a href="{{ .RelPermalink }}" class="group relative overflow-hidden border-4 border-nb-light-border shadow-neo-lg hover:shadow-neo-xl transition-all hover:-translate-y-2 bg-gradient-to-br {{ index $gradients (mod (add 1 .Date.Unix) 4) }} aspect-square {{ if eq (mod (add 1 .Date.Unix) 3) 0 }}md:col-span-2 md:row-span-2{{ end }}">
             <div class="absolute inset-0 bg-nb-light-bg bg-opacity-0 group-hover:bg-opacity-95 transition-all flex items-center justify-center p-4 border-4 border-transparent group-hover:border-nb-light-border">
               <div class="opacity-0 group-hover:opacity-100 transition-opacity text-center">
                 <div class="bg-nb-pop-pink border-2 border-nb-light-border p-3 inline-block mb-2">
