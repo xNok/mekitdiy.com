@@ -27,3 +27,54 @@
   --color-text-on-pop-bright: #FFFFFF;
   --color-text-on-pop-dark: #0A0A0A;
 }
+
+/* Custom Shadow Classes for Neo-Brutalist Style */
+@layer utilities {
+  .shadow-neo {
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* 
+   * .shadow-neo-hover is intended for use on elements that should display a stronger
+   * neo-brutalist shadow on hover. Add this class in templates or via JavaScript
+   * when implementing interactive hover effects in the future.
+   */
+  .shadow-neo-hover {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.9);
+  }
+  
+  .shadow-neo-lg {
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.8);
+  }
+  
+  .shadow-neo-xl {
+    box-shadow: 14px 14px 0px 0px rgba(0, 0, 0, 0.9);
+  }
+  
+  /* Slight rotation for visual interest */
+  .rotate-neo-1 {
+    transform: rotate(-1deg);
+  }
+  
+  .rotate-neo-2 {
+    transform: rotate(1deg);
+  }
+  
+  /* Hero panel styles */
+  .hero-panel {
+    position: relative;
+    overflow: visible;
+  }
+  
+  .hero-panel::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-nb-pop-yellow);
+    border: 4px solid var(--color-nb-light-border);
+    z-index: -1;
+  }
+}
