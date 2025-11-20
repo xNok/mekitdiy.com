@@ -57,8 +57,8 @@ jobs:
         run: |
           # Start Hugo server in background
           hugo server --bind 0.0.0.0 --port 1313 --disableFastRender &
-          # Wait for server to be ready
-          sleep 5
+          # Wait for server to be ready (timeout after 30s)
+          timeout 30 bash -c 'until curl -s http://localhost:1313 > /dev/null; do sleep 1; done'
           # Run tests
           npm test
 

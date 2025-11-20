@@ -1,13 +1,16 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 
+// Pinterest domain verification token
+const PINTEREST_DOMAIN_VERIFICATION_TOKEN = 'b2a76553d3605a9602f0f4409f059530';
+
 test.describe('Pinterest Integration', () => {
   test('should have Pinterest domain verification meta tag', async ({ page }) => {
     await page.goto('/');
     
     // Check for Pinterest domain verification meta tag
     const metaTag = await page.locator('meta[name="p:domain_verify"]');
-    await expect(metaTag).toHaveAttribute('content', 'b2a76553d3605a9602f0f4409f059530');
+    await expect(metaTag).toHaveAttribute('content', PINTEREST_DOMAIN_VERIFICATION_TOKEN);
   });
 
   test('Mini Me project page should have Pinterest board embed', async ({ page }) => {
