@@ -44,7 +44,7 @@ module.exports = defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'hugo server --disableFastRender',
+    command: 'hugo server',
     url: 'http://localhost:1313',
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
