@@ -4,3 +4,8 @@ website/public
 website/resources
 
 node_modules/
+
+# Playwright
+website/test-results/
+website/playwright-report/
+website/playwright/.cache/
