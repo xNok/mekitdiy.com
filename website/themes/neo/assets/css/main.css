@@ -80,7 +80,7 @@
 }
 
 /* Code styling */
-code {
+.text-lg code {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 0.875em;
   background-color: #f1f5f9;
