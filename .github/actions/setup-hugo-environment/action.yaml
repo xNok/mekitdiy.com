@@ -29,16 +29,19 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
         cache: 'npm'
+        cache-dependency-path: website/package-lock.json
 
     - name: Install dependencies
       shell: bash
+      working-directory: website
       run: npm ci
 
     - name: Get Playwright version
       if: inputs.install-playwright == 'true'
       id: playwright-version
       shell: bash
-      run: echo "version=$(node -p "require('./package.json').devDependencies['@playwright/test']")" >> $GITHUB_OUTPUT
+      working-directory: website
+      run: echo "version=$(node -p "require('./package.json').devDependencies['@playwright/test']" | tr -cd 'a-zA-Z0-9._+-')" >> $GITHUB_OUTPUT
 
     - name: Cache Playwright browsers
       if: inputs.install-playwright == 'true'
@@ -48,7 +51,14 @@ runs:
         path: ~/.cache/ms-playwright
         key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
 
+    - name: Install Playwright OS Dependencies
+      if: inputs.install-playwright == 'true'
+      shell: bash
+      working-directory: website
+      run: npx playwright install-deps chromium
+
     - name: Install Playwright Browsers
       if: inputs.install-playwright == 'true' && steps.playwright-cache.outputs.cache-hit != 'true'
       shell: bash
-      run: npx playwright install --with-deps chromium
+      working-directory: website
+      run: npx playwright install chromium

@@ -18,6 +18,7 @@ jobs:
         uses: ./.github/actions/setup-hugo-environment
 
       - name: Run Playwright Tests
+        working-directory: website
         run: npm test
 
       - name: Build Hugo Site
@@ -30,5 +31,5 @@ jobs:
         if: always()
         with:
           name: jules-playwright-report
-          path: playwright-report/
+          path: website/playwright-report/
           retention-days: 14

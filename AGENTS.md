@@ -28,7 +28,7 @@ Before making modifications or running tests, ensure the environment dependencie
 
 ```bash
 # Install Node.js dependencies
-npm ci
+cd website && npm ci
 
 # Install Playwright browser dependencies
 npx playwright install chromium
@@ -36,9 +36,9 @@ npx playwright install chromium
 
 ### Essential Commands
 
-- **Run Playwright Tests**: `npm test`
-- **Build Static Site**: `cd website && npx hugo --gc --minify`
-- **Run Local Server**: `cd website && npx hugo server`
+- **Run Playwright Tests**: `cd website && npm test`
+- **Build Static Site**: `cd website && hugo --gc --minify`
+- **Run Local Server**: `cd website && hugo server`
 
 ---
 

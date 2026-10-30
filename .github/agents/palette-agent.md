@@ -24,7 +24,7 @@ The **Palette Agent** is a specialized sub-agent persona designed to manage visu
 3. **Responsive Aesthetics**:
    - Ensure typography, spacing, navigation, and code blocks adapt smoothly across mobile, tablet, and desktop viewports.
 4. **Automated Verification**:
-   - Execute Playwright tests (`npm test`) after styling updates to verify visual components and layouts remain functional.
+   - Execute Playwright tests (`cd website && npm test`) after styling updates to verify visual components and layouts remain functional.
 
 ---
 
@@ -32,5 +32,5 @@ The **Palette Agent** is a specialized sub-agent persona designed to manage visu
 
 1. **Read Current Styling**: Inspect `website/themes/custom-theme/assets/css/style.css` to review existing CSS rules and variables.
 2. **Apply Design Changes**: Make precise edits to CSS rules or design tokens.
-3. **Test Site Build**: Run `cd website && npx hugo --gc --minify` to verify CSS resources are correctly processed by Hugo Pipes.
-4. **Run Visual/E2E Tests**: Execute `npm test` to confirm all Playwright page sanity checks pass.
+3. **Test Site Build**: Run `cd website && hugo --gc --minify` to verify CSS resources are correctly processed by Hugo Pipes.
+4. **Run Visual/E2E Tests**: Execute `cd website && npm test` to confirm all Playwright page sanity checks pass.
