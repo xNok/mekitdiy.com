@@ -1,0 +1,3 @@
+## 2026-10-30 - Neo-Brutalist Accessible Skip-to-Content Pattern
+**Learning:** In neo-brutalist themes with vibrant high-contrast palettes, an accessible skip-to-content link should use Tailwind's `sr-only focus:not-sr-only` coupled with the theme's high-contrast colors (`focus:bg-nb-pop-yellow`, `focus:text-nb-light-text`, `focus:border-nb-light-border`, and `focus:shadow-neo`). This ensures the skip link seamlessly blends into the design system while remaining immediately noticeable and accessible to keyboard users on first tab.
+**Action:** When adding keyboard navigation aids in this theme, use high-visibility pop accents (`nb-pop-yellow`) and `shadow-neo` with `focus:not-sr-only` positioning.
