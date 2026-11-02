@@ -1,0 +1,35 @@
+name: Jules AI Integration Workflow
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Jules Verification & Testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo & Test Environment
+        uses: ./.github/actions/setup-hugo-environment
+
+      - name: Run Playwright Tests
+        working-directory: website
+        run: npm test
+
+      - name: Build Hugo Site
+        run: |
+          cd website
+          hugo --gc --minify
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jules-playwright-report
+          path: website/playwright-report/
+          retention-days: 14
