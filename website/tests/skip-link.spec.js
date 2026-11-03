@@ -2,22 +2,29 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('Skip to Content Link', () => {
-  test('skip link exists, is visually hidden until focused, and links to main content', async ({ page }) => {
+  test('should provide a keyboard-accessible skip link', async ({ page }) => {
     await page.goto('/');
 
-    const skipLink = page.getByRole('link', { name: 'Skip to content' });
-    await expect(skipLink).toHaveAttribute('href', '#content');
+    const skipLink = page.locator('a[href="#content"]');
+    await expect(skipLink).toBeAttached();
+    await expect(skipLink).toHaveText('Skip to content');
 
-    // Link should initially have sr-only class (visually hidden)
+    // Initially visually hidden with sr-only
     await expect(skipLink).toHaveClass(/sr-only/);
 
-    // Press tab to focus the first interactive element (the skip link)
+    // Focus via Tab key
     await page.keyboard.press('Tab');
     await expect(skipLink).toBeFocused();
+
+    // When focused, it should be visible to keyboard users
     await expect(skipLink).toBeVisible();
 
     // Verify main target exists
     const mainContent = page.locator('#content');
     await expect(mainContent).toBeVisible();
+
+    // Pressing Enter should navigate focus / URL to #content
+    await page.keyboard.press('Enter');
+    expect(page.url()).toContain('#content');
   });
 });
