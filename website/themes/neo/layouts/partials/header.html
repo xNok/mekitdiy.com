@@ -3,9 +3,11 @@
     <a href="{{ "/" | relURL }}" class="text-3xl font-bold hover:text-nb-pop-pink focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded transition-colors">
       {{ .Site.Title }}
     </a>
-    <nav aria-label="Main navigation">
-      <a href="{{ "projects/" | relURL }}" class="text-lg hover:text-nb-pop-yellow focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded px-2 py-2">Projects</a>
-      <a href="{{ "blog/" | relURL }}" class="text-lg hover:text-nb-pop-yellow focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded px-2 py-2">Blog</a>
+    <nav aria-label="Main navigation" class="flex gap-2">
+      {{ $isProjects := eq .Section "projects" }}
+      {{ $isBlog := eq .Section "blog" }}
+      <a href="{{ "projects/" | relURL }}" {{ if $isProjects }}aria-current="page"{{ end }} class="text-lg rounded px-3 py-1 transition-colors focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none {{ if $isProjects }}bg-nb-pop-yellow text-nb-light-text font-bold shadow-neo border-2 border-nb-dark-border{{ else }}hover:text-nb-pop-yellow{{ end }}">Projects</a>
+      <a href="{{ "blog/" | relURL }}" {{ if $isBlog }}aria-current="page"{{ end }} class="text-lg rounded px-3 py-1 transition-colors focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none {{ if $isBlog }}bg-nb-pop-yellow text-nb-light-text font-bold shadow-neo border-2 border-nb-dark-border{{ else }}hover:text-nb-pop-yellow{{ end }}">Blog</a>
       {{/* <a href="{{ "about/" | relURL }}" class="text-lg hover:text-nb-pop-yellow px-3 py-2">About</a> */}}
       {{/* <a href="{{ "contact/" | relURL }}" class="text-lg hover:text-nb-pop-yellow px-3 py-2">Contact</a> */}}
     </nav>
