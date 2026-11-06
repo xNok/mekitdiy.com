@@ -3,9 +3,11 @@
     <a href="{{ "/" | relURL }}" class="text-3xl font-bold hover:text-nb-pop-pink focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded transition-colors">
       {{ .Site.Title }}
     </a>
-    <nav aria-label="Main navigation">
-      <a href="{{ "projects/" | relURL }}" class="text-lg hover:text-nb-pop-yellow focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded px-2 py-2">Projects</a>
-      <a href="{{ "blog/" | relURL }}" class="text-lg hover:text-nb-pop-yellow focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded px-2 py-2">Blog</a>
+    <nav aria-label="Main navigation" class="flex items-center space-x-2">
+      {{ $isProjects := eq .Section "projects" }}
+      <a href="{{ "projects/" | relURL }}"{{ if $isProjects }} aria-current="page"{{ end }} class="text-lg focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded px-3 py-1 font-bold transition-all {{ if $isProjects }}bg-nb-pop-yellow text-text-on-pop-dark shadow-neo border-2 border-nb-light-border{{ else }}text-text-on-pop-bright hover:text-nb-pop-yellow{{ end }}">Projects</a>
+      {{ $isBlog := eq .Section "blog" }}
+      <a href="{{ "blog/" | relURL }}"{{ if $isBlog }} aria-current="page"{{ end }} class="text-lg focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded px-3 py-1 font-bold transition-all {{ if $isBlog }}bg-nb-pop-yellow text-text-on-pop-dark shadow-neo border-2 border-nb-light-border{{ else }}text-text-on-pop-bright hover:text-nb-pop-yellow{{ end }}">Blog</a>
       {{/* <a href="{{ "about/" | relURL }}" class="text-lg hover:text-nb-pop-yellow px-3 py-2">About</a> */}}
       {{/* <a href="{{ "contact/" | relURL }}" class="text-lg hover:text-nb-pop-yellow px-3 py-2">Contact</a> */}}
     </nav>
