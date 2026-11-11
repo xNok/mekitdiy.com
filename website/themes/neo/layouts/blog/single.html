@@ -1,6 +1,7 @@
 {{ define "main" }}
 <article class="py-12">
   <div class="container mx-auto px-6">
+    {{ partial "breadcrumbs.html" . }}
     <header class="mb-8 text-center">
       <h1 class="text-4xl md:text-5xl font-bold text-nb-light-text">{{ .Title }}</h1>
       <p class="text-nb-light-text mt-2">

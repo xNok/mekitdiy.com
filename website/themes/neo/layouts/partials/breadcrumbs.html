@@ -1,0 +1,23 @@
+<nav aria-label="Breadcrumb" class="mb-6">
+  <ol class="flex flex-wrap items-center gap-2 text-sm font-semibold text-nb-light-text">
+    <li class="inline-flex items-center">
+      <a href="{{ "/" | relURL }}" class="hover:text-nb-pop-pink hover:underline focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded transition-colors">
+        Home
+      </a>
+    </li>
+    {{ with .Section }}
+      <li class="inline-flex items-center gap-2">
+        <span class="text-nb-light-border" aria-hidden="true">/</span>
+        <a href="{{ printf "/%s/" . | relURL }}" class="capitalize hover:text-nb-pop-pink hover:underline focus-visible:ring-2 focus-visible:ring-nb-pop-yellow focus-visible:outline-none rounded transition-colors">
+          {{ . }}
+        </a>
+      </li>
+    {{ end }}
+    <li class="inline-flex items-center gap-2" aria-current="page">
+      <span class="text-nb-light-border" aria-hidden="true">/</span>
+      <span class="text-nb-light-text font-bold truncate max-w-xs md:max-w-md">
+        {{ .Title }}
+      </span>
+    </li>
+  </ol>
+</nav>
